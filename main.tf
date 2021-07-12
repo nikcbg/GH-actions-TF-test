@@ -1,5 +1,15 @@
+terraform {
+  backend "remote" {
+    organization = "nikolay-paid"
+
+    workspaces {
+      name = "GH-action-random-pet"
+    }
+  }
+}
+
 resource "random_pet" "example" {
-  length    = "15"
+  length = "15"
 }
 
 output "name" {
